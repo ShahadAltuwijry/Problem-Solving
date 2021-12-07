@@ -10,6 +10,11 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 
 const raisedToTheThird = (arr) => {
   // Solution code here...
+  let newArr = [];
+  arr.forEach((element) => {
+    newArr.push(Math.pow(element, 3));
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -21,6 +26,8 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 
 const appendTheEnd = (str) => {
   // Solution code here...
+  let newStr = str.concat(" The end.");
+  return newStr;
 };
 
 /* ------------------------------------------------------------------------------------------------
