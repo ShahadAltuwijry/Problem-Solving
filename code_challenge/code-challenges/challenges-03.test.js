@@ -26,7 +26,7 @@ const updateAnimal = (arr, callback) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 2
+CHALLENGE 2 done
 
 Write a function called sortNames that takes an array of names and sorts them alphabetically. Capital letters should come before lowercase letters.
 
@@ -40,7 +40,7 @@ const sortNames = (arr) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 3
+CHALLENGE 3 done
 
 Write a function called sortNumbers that takes an array of numbers and sorts them from smallest to largest. 
 
@@ -54,7 +54,7 @@ const sortNumbers = (arr) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 4
+CHALLENGE 4 done
 
 Write a function named sortBackwards that takes in an array of numbers and returns the same array, with the numbers sorted, largest to smallest.
 
@@ -68,7 +68,7 @@ const sortBackwards = (arr) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 5
+CHALLENGE 5 done
 
 Write a function named alphabetize that takes in an array of strings and returns the same array with the strings sorted alphabetically.
 
@@ -84,7 +84,7 @@ const alphabetize = (arr) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 6
+CHALLENGE 6 done
 
 Write a function named sortByPrice that takes in an array of objects, each of which has a 'price' property, and sorts those objects by price, lowest to highest, returning the same array.
 
@@ -112,6 +112,8 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 const alphabetizeBetter = (arr) => {
   // Solution code here...
+    arr.sort((a, b) => a.length - b.length);
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
