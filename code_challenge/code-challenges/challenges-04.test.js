@@ -8,6 +8,11 @@ Write a function called addTwo that takes in an array and adds two to every valu
 
 const addTwo = (arr) => {
   // Solution code here...
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(arr[i] + 2);
+  }
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -19,6 +24,8 @@ Write a function named containsW that takes in a string. This function should us
 
 const containsW = (str) => {
   // Solution code here...
+  const test = new RegExp("w");
+  return test.test(str);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,6 +42,8 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
+  // const test = new RegExp();
+  return /\d/.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,6 +55,8 @@ Write a function named containsWorld that takes in a string or number of any len
 
 const containsWorld = (input) => {
   // Solution code here...
+  const test = new RegExp("world");
+  return test.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
