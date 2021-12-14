@@ -23,6 +23,15 @@ function lower(str) {
 
 const updateAnimal = (arr, callback) => {
   // Solution code here...
+  const newArr = [];
+  arr.forEach((ele) => {
+    if (callback == lower) {
+      newArr.push(lower(ele));
+    } else {
+      newArr.push(upper(ele));
+    }
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -112,8 +121,8 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 const alphabetizeBetter = (arr) => {
   // Solution code here...
-    arr.sort((a, b) => a.length - b.length);
-    return arr;
+  arr.sort((a, b) => a.localeCompare(b));
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -124,6 +133,8 @@ Write a function named sortByLength that takes in an array of strings and return
 
 const sortByLength = (arr) => {
   // Solution code here...
+  arr.sort((a, b) => String(a).length - String(b).length);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -136,6 +147,8 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 
 const sortNumbersByLength = (arr) => {
   // Solution code here...
+  arr.sort((a, b) => String(a).length - String(b).length);
+  return arr;
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -158,6 +171,9 @@ const people = [
 
 const sortPeople = (arr) => {
   // Solution code here...
+  return arr.sort((x, y) => {
+    return x.lastName.toLowerCase() < y.lastName.toLowerCase() ? -1 : 1;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -172,6 +188,11 @@ If two people have the same full name, the younger one should come first. Do not
 
 const sortPeopleBetter = (arr) => {
   // Solution code here...
+  return arr.sort((a, b) => {
+    if (a.lastName !== b.lastName) return a.lastName < b.lastName ? -1 : 1;
+    if (a.firstName !== b.firstName) return a.firstName < b.firstName ? -1 : 1;
+    return a.age < b.age ? -1 : 1;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -212,6 +233,10 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 
 const sortSchedule = (arr) => {
   // Solution code here...
+  arr.sort((a, b) => {
+    return 
+  })
+
 };
 
 /* ------------------------------------------------------------------------------------------------

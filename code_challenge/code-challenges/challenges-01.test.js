@@ -1,7 +1,7 @@
 "use strict";
 //ch4 & ch5 not completed
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 1
+CHALLENGE 1 done
 
 Write a function named `addOne` that takes an array of numbers, and returns a new array of the numbers, incremented by 1.
 
@@ -17,7 +17,7 @@ const addOne = (arr) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 2
+CHALLENGE 2 done
 
 Write a function named `addExclamation` that takes an array of strings, and returns a new array of the same strings with an "!" added to the end.
 
@@ -33,7 +33,7 @@ const addExclamation = (arr) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 3
+CHALLENGE 3 done
 
 Write a function named `allUpperCase` that takes an array of strings, and returns a new array of the strings converted to upper case.
 
@@ -49,7 +49,7 @@ const allUpperCase = (arr) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 4
+CHALLENGE 4 done
 
 Write a function named `greeting` that takes in a single string and returns the string in all uppercase letters, and followed by an "!".
 
@@ -59,7 +59,7 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
-  let word2 = "";
+  let word2 = [];
   word.forEach((element) => {
     word2 = element.toUpperCase() + "!";
   });
@@ -68,10 +68,15 @@ const greeting = (word) => {
 
 const speaker = (words, cb) => {
   // Solution code here...
+  let word2 = [];
+  words.forEach((ele) => {
+    word2.push(ele.toUpperCase() + "!");
+  });
+  return word2;
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 5
+CHALLENGE 5 
 
 Write a function named addValues that takes in an array and a value and pushes the value into the array. This function does not need a return statement.
 
@@ -88,15 +93,20 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, cb) => {
   // Solution code here...
+  for (let i = 0; i < times; i++) {
+    arr.push(num);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 
-CHALLENGE 6
+CHALLENGE 6 done
 
 Write a function named createList that takes in an array of the current store intentory.
 
@@ -124,7 +134,7 @@ const createList = (availableItems) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-STRETCH - CHALLENGE 7
+STRETCH - CHALLENGE 7 done
 
 Write a function named fizzbuzz that takes in an array of numbers.
 
@@ -149,7 +159,7 @@ const fizzbuzz = (arr) => {
       array.push("Buzz");
     } else array.push(i);
   }
-    return array;
+  return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
