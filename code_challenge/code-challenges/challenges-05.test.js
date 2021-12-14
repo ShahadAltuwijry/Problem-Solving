@@ -178,6 +178,9 @@ For example:
 
 const removeEvenValues = (arr) => {
   // Solution code here...
+
+  console.log(arr.filter((n) => n % 2));
+  return arr.filter((n) => n % 2);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -197,6 +200,13 @@ removeLastCharacters('Gregor', 9) returns ''
 
 const removeLastCharacters = (str, numberOfCharacters) => {
   // Solution code here...
+  if (numberOfCharacters > 0) {
+    return str.slice(0, str.length - numberOfCharacters);
+  } else if (numberOfCharacters < 0) {
+    return str;
+  } else if (numberOfCharacters > str.length) {
+    return " ";
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -372,13 +382,12 @@ describe("Testing challenge 8", () => {
 describe("Testing challenge 9", () => {
   test("It should remove the even numbers from the array", () => {
     let list = [1, 2, 3, 4, 5, 6];
-    removeEvenValues(list);
-    expect(list).toStrictEqual([1, 3, 5]);
+    expect(removeEvenValues(list)).toStrictEqual([1, 3, 5]);
 
     list = [6, 3, 19, 43, 12, 66, 43];
-    removeEvenValues(list);
-    expect(list).toStrictEqual([3, 19, 43, 43]);
-    expect(list.length).toStrictEqual(4);
+
+    expect(removeEvenValues(list)).toStrictEqual([3, 19, 43, 43]);
+    expect(removeEvenValues(list).length).toStrictEqual(4);
   });
 });
 
