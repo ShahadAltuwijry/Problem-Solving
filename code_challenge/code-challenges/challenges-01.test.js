@@ -67,7 +67,6 @@ const greeting = (word) => {
 };
 
 const speaker = (words, cb) => {
-  // Solution code here...
   let word2 = [];
   words.forEach((ele) => {
     word2.push(ele.toUpperCase() + "!");
@@ -92,12 +91,10 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
   arr.push(value);
 };
 
 const addNumbers = (num, arr, times, cb) => {
-  // Solution code here...
   for (let i = 0; i < times; i++) {
     arr.push(num);
   }
@@ -123,7 +120,6 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
   let arr = [];
   availableItems.forEach((element) => {
     if (element.available == true) {
@@ -148,7 +144,6 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
   let array = [];
   for (let i = 1; i <= arr.length; i++) {
     if (i % 15 == 0) {

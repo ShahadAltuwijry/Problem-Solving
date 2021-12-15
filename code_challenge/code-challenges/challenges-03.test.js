@@ -22,7 +22,6 @@ function lower(str) {
 }
 
 const updateAnimal = (arr, callback) => {
-  // Solution code here...
   const newArr = [];
   arr.forEach((ele) => {
     if (callback == lower) {
@@ -43,7 +42,6 @@ For example: 'Cat' would come before 'apple'
 ------------------------------------------------------------------------------------------------ */
 
 const sortNames = (arr) => {
-  // Solution code here...
   arr.sort();
   return arr;
 };
@@ -57,7 +55,6 @@ HINT: Beware... JS default is "Lexical" ordering.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbers = (arr) => {
-  // Solution code here...
   arr.sort((a, b) => a - b);
   return arr;
 };
@@ -71,7 +68,6 @@ HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 ------------------------------------------------------------------------------------------------ */
 
 const sortBackwards = (arr) => {
-  // Solution code here...
   arr.sort((a, b) => b - a);
   return arr;
 };
@@ -87,7 +83,6 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetize = (arr) => {
-  // Solution code here...
   arr.sort();
   return arr;
 };
@@ -106,7 +101,6 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  // Solution code here...
   arr.sort((a, b) => a.price - b.price);
   return arr;
 };
@@ -120,7 +114,6 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
-  // Solution code here...
   arr.sort((a, b) => a.localeCompare(b));
   return arr;
 };
@@ -132,7 +125,6 @@ Write a function named sortByLength that takes in an array of strings and return
 ------------------------------------------------------------------------------------------------ */
 
 const sortByLength = (arr) => {
-  // Solution code here...
   arr.sort((a, b) => String(a).length - String(b).length);
   return arr;
 };
@@ -146,7 +138,6 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbersByLength = (arr) => {
-  // Solution code here...
   arr.sort((a, b) => String(a).length - String(b).length);
   return arr;
 };
@@ -170,7 +161,6 @@ const people = [
 ];
 
 const sortPeople = (arr) => {
-  // Solution code here...
   return arr.sort((x, y) => {
     return x.lastName.toLowerCase() < y.lastName.toLowerCase() ? -1 : 1;
   });
@@ -187,7 +177,6 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 const sortPeopleBetter = (arr) => {
-  // Solution code here...
   return arr.sort((a, b) => {
     if (a.lastName !== b.lastName) return a.lastName < b.lastName ? -1 : 1;
     if (a.firstName !== b.firstName) return a.firstName < b.firstName ? -1 : 1;
