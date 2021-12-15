@@ -1,0 +1,9 @@
+Challenges left:
+
+- ch1 >>>>>  fully done
+- ch2 >>>>> fully done
+- ch3 >>>>> 12, 13
+- ch4 >>>>> 4,5,6,7,8,9
+- ch5 >>>>> 5, 6, 7, 8
+- ch6 >>>>> all except 2
+- ch7 >>>>> 8, 9, 10

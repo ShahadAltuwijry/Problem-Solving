@@ -25,7 +25,6 @@ let starWarsPeople = [
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
-  // Solution code here...
   starWarsArr.sort((a, b) => b.height - a.height);
   return starWarsArr;
 };
@@ -37,7 +36,6 @@ Write a function named removeThree that takes an index and an array. The functio
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
-  // Solution code here...
   arr.splice(idx, 3);
   return arr;
 };
@@ -49,7 +47,6 @@ Write a function named joinArray that takes an array and joins all of the elemen
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
-  // Solution code here...
   return arr.join(" ");
 };
 
@@ -69,7 +66,6 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   let res = str;
-  // Solution code here...
   for (let i = 0; i < str.length + 1; i++) {
     result.push(res);
     res = res.slice(1);
@@ -86,7 +82,6 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
   return arr.split("");
 };
 
@@ -177,8 +172,6 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
-
   return arr.filter((n) => n % 2);
 };
 
@@ -198,7 +191,6 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
   if (numberOfCharacters > 0) {
     return str.slice(0, str.length - numberOfCharacters);
   } else if (numberOfCharacters < 0) {
@@ -216,7 +208,6 @@ Write a function named totalSumCSV that, given a string of comma-separated value
 
 const totalSumCSV = (str) => {
   let total = 0;
-  // Solution code here...
   let num = str.split(",");
   for (let i = 0; i < num.length; i++) {
     total += parseInt(num[i]);
@@ -233,7 +224,6 @@ For example, removeVowels('gregor') returns 'grgr'.
 ------------------------------------------------------------------------------------------------ */
 
 const removeVowels = (str) => {
-  // Solution code here...
   let removed = str.match(/[^ioeau]/g);
   return removed.join("");
 };
@@ -249,9 +239,11 @@ Similarly, extractVowels('The quick brown fox') returns ['Th qck brwn fx', 'eioo
 ------------------------------------------------------------------------------------------------ */
 
 const extractVowels = (str) => {
-  // Solution code here...
   let alter = str.match(/[^aeuio]/g).join("");
-  let removed = str.match(/[aeiou]/g).sort().join("");
+  let removed = str
+    .match(/[aeiou]/g)
+    .sort()
+    .join("");
   let res = [alter, removed];
   console.log(res);
   return res;
