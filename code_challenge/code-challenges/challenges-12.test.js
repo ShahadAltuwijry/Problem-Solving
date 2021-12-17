@@ -9,7 +9,11 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  // Solution code here...
+  let res = arr.reduce((max, ele) => {
+    if (ele > max) max = ele;
+    return max;
+  }, 0);
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -27,7 +31,9 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  // Solution code here...
+  let max = matrix.map((ele) => Math.max(...ele));
+  let res = Math.max(...max);
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,7 +51,12 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-  // Solution code here...
+  let sum = 0;
+  let res = matrix.map((ele) => {
+    ele.map((e) => (sum += e));
+  });
+  // console.log(sum);
+  return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -84,7 +95,8 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
