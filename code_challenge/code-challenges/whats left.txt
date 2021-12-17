@@ -6,4 +6,6 @@ Challenges left:
 - ch4 >>>>> 4,5,6,7,8,9
 - ch5 >>>>> 5, 6, 7, 8
 - ch6 >>>>> all except 2
-- ch7 >>>>> 8, 9, 10
+- ch7 >>>>> fully done
+- ch8 >>>>> 6
+- ch9 >>>>> 

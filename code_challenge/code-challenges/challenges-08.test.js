@@ -8,7 +8,10 @@ Write a function named returnTen, takes in a string and uses split and splice to
 ------------------------------------------------------------------------------------------------ */
 
 function returnTen(str) {
-  // Solution code here...
+  let res = str.split("");
+  let fin = res.splice(res.length - 10, 10);
+
+  return fin;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -21,6 +24,8 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 
 const typeNum = (arr) => {
   // Solution code here...
+  let res = arr.filter((ele) => typeof ele === "number"); //typeof will return types as strings so that s why not Number
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -32,7 +37,9 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
 
 const containsAnd = (arr) => {
-  // Solution code here...
+  let res = arr.filter((ele) => ele.includes("and"));
+
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -44,7 +51,9 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const oddValues = (arr) => {
-  // Solution code here...
+  let res = arr.filter((ele) => ele % 2 != 0);
+
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -58,7 +67,10 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 ------------------------------------------------------------------------------------------------ */
 
 const filterStringsWithVowels = (arr) => {
-  // Solution code here...
+  let res = /[i|o|u|a|e]/;
+  let fin = arr.filter((ele) => res.test(ele));
+
+  return fin;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -113,19 +125,25 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
+  let res = arr.filter((ele) => ele.baseStat > minBaseStat && ele);
+
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
 
-Write a function named getStatName that is an extension of your getBaseStatGreaterThan function from challenge 4. For this function, extend your solution from challenge 4 to only return the name of the stat, rather than the entire stat object.
+Write a function named getStatName that is an extension of your getBaseStatGreaterThan function from challenge 7. For this function, extend your solution from challenge 7 to only return the name of the stat, rather than the entire stat object.
 
 For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 'special-attack'].
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
+  let res = arr
+    .filter((ele) => ele.baseStat > minBaseStat && ele)
+    .map((ele) => ele.stat.name);
+
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -178,7 +196,8 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
+  let res = arr.filter((ele) => typeof ele.children === "undefined");
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -190,7 +209,13 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 ------------------------------------------------------------------------------------------------ */
 
 const evenOddNumericValues = (arr) => {
-  // Solution code here...
+  let res = arr
+    .filter((ele) => typeof ele === "number")
+    .map((element) => {
+      if (element % 2 === 0) return "even";
+      else return "odd";
+    });
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
