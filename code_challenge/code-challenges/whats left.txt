@@ -8,4 +8,5 @@ Challenges left:
 - ch6 >>>>> all except 2
 - ch7 >>>>> fully done
 - ch8 >>>>> 6
-- ch9 >>>>> 
+- ch9 >>>>> fully done
+- ch10 >>>> 
