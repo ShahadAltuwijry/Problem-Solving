@@ -63,7 +63,8 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+  const res = str.match(/\b[A-Z].*?\b/g) || [];
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -72,7 +73,14 @@ CHALLENGE 6
 Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  const newArr = [];
+  let res = arr.forEach((ele) => {
+    if (ele.match(/^[A-Ja-j].*/g)) {
+      newArr.push(...ele.match(/^[A-Ja-j].*/g));
+    }
+  });
+  // console.log(newArr);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -88,7 +96,13 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // Solution code here...
+  let res;
+  {
+    input.toString().match(/^october$|^oct$|^October$|^Oct$/g)
+      ? (res = true)
+      : (res = false);
+  }
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -102,7 +116,8 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = (str) => {
-  // Solution code here...
+  let res = str.match(/[A-Za-z0-9]+\s/g);
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -118,7 +133,8 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
 let hangman = (str) => {
-  // Solution code here...
+  let res = str.replace(/a|A|e|E|i|I|o|O|u|U/g, "_");
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -135,7 +151,8 @@ const seashells =
   "She sells seashells by the seashore. The shells she sells are surely seashells. So if she sells shells on the seashore, I'm sure she sells seashore shells.";
 
 const findShells = (str) => {
-  // Solution code here...
+  let res = str.match(/\w*ells\b/g);
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
