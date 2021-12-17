@@ -23,7 +23,10 @@ Returns: ['dyoll', 'eimaj'];
 ------------------------------------------------------------------------------------------------ */
 
 const getNames = (arr) => {
-  // Solution code here...
+  const res = arr.map((ele) => {
+    return ele.name.split("").reverse().join("");
+  });
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -37,7 +40,14 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
+  const item = 0;
+  const res = input.reduce((acc, arr) => {
+    const found = arr.filter((num) => num === target);
+    acc += found.length;
+    return acc;
+  }, 0);
+
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -51,7 +61,16 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  const res = input.reduce((acc, arr) => {
+    let sum = arr.reduce((acc, num) => {
+      acc += num;
+      return acc;
+    }, 0);
+    acc += sum;
+    return acc;
+  }, 0);
+
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
