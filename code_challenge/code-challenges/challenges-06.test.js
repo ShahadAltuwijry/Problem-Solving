@@ -87,8 +87,17 @@ const getCourseKeys = (obj) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
+Write a function named checkValues that takes in an object and a value and returns true if the value is in the object.
+------------------------------------------------------------------------------------------------ */
 
-Write a f jn vbv mbn-----------------------------------------------------------------
+const checkValues = (obj, value) => {
+  let res;
+  Object.values(obj).find((ele) =>
+    ele === value ? (res = true) : (res = false)
+  );
+  return res;
+};
+/*-----------------------------------------------------------------
 CHALLENGE 4
 
 You are given an object with names and their coresponding phone numbers that looks like this: 
