@@ -76,8 +76,6 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-
-
   // arr.map((ele) => {
   //   if (ele.includes(":)")) {
   //     return true;
@@ -85,7 +83,6 @@ const allHappy = (arr) => {
   //     return false;
   //   }
   // });
-
   // for (let i = 0; i < arr.length; i++) {
   //   if (arr[i].includes(":)")) {
   //     return true;
@@ -113,7 +110,8 @@ Write a function named findEvery that takes in an array of strings, along with a
 ------------------------------------------------------------------------------------------------ */
 
 const findEvery = (arr, target) => {
-  // Solution code here...
+  let res = arr.every((ele) => ele.includes(target));
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -129,7 +127,8 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 ------------------------------------------------------------------------------------------------ */
 
 const unenrollBrook = (arr) => {
-  // Solution code here...
+  let res = arr.map((ele) => ele.filter((e) => !e.includes("Brook")));
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -176,7 +175,8 @@ For example, ['abcd', 'efgh', 'ijkl', 'mnop'] returns ['a', 'f', 'k', 'p']
 ------------------------------------------------------------------------------------------------ */
 
 const characterByIndex = (arr) => {
-  // Solution code here...
+  let res = arr.map((ele, i) => ele.slice(i, i + 1));
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
