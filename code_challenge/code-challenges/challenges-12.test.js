@@ -95,8 +95,16 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
+  let res = [];
+  // console.log(stores);
 
+  stores.forEach((store) => {
+    store.forEach((cookie, i) => {
+      res[i] ? (res[i] += cookie) : res.push(cookie);
+    });
+  });
 
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -110,7 +118,14 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  let arr = [];
+
+  //this will only work if i solved the one before
+  data.map((sold, i) => {
+    arr.push({ sales: `${sold} cookies`, time: hours[i] });
+  });
+  // console.log(hours, data, "here");
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -147,7 +162,16 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  let res = arr.reduce((acc, store) => {
+    let q = store.items.reduce((acc, ele) => {
+      if (ele.name == "Treats") acc += ele.quantity;
+      return acc;
+    }, 0);
+    acc += q;
+    return acc;
+  }, 0);
+
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -169,7 +193,11 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
+  let res;
+  {
+    board[row][col] === "#" ? (res = "hit") : (res = "miss");
+  }
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -181,7 +209,16 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  let res = numbers.reduce((acc, arr) => {
+    let multi = arr.reduce((acc, num) => {
+      acc *= num;
+      return acc;
+    }, 1);
+    acc *= multi;
+    return acc;
+  }, 1);
+
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -201,7 +238,20 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
+  let avg = weather.reduce(
+    (acc, week) => {
+      let data = week.reduce((acc, num) => {
+        acc += num;
+        return acc;
+      }, 0);
+      acc.total += data;
+      acc.days += week.length;
+      return acc;
+    },
+    { total: 0, days: 0 }
+  );
+
+  return avg.total / avg.days;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -222,7 +272,24 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  // Solution code here...
+  let res = weather.reduce((acc, week) => {
+    let data = week.reduce(
+      (acc, val) => {
+        acc.total += val;
+        acc.days++;
+        return acc;
+      },
+      { total: 0, days: 0 }
+    );
+    let avg = data.total / data.days;
+    if (acc < avg) {
+      return acc;
+    } else {
+      return avg;
+    }
+  });
+  // console.log(res);
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
